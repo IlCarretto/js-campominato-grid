@@ -35,3 +35,7 @@ img {
     justify-content: center;
     align-items: center;
 }
+
+.light-blue {
+    background-color: lightblue;
+}

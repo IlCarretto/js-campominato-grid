@@ -12,11 +12,20 @@ console.log(squareNumbers);
 
 const grid = document.querySelector(".grid");
 console.log(grid);
+let squares = "";
 // Creare gli square da inserire nella griglia
 for (let i = 0; i < 100; i++) {
-    const squares = squareGenerator(squareNumbers[i]);
+    squares = squareGenerator(squareNumbers[i]);
     grid.append(squares);
 }
+
+squares.addEventListener("click", function() {
+    squares.classList.toggle("light-blue");
+})
+
+
+// Aggiungere l'evento ad ogni cella per cui si colora di azzurro ed emette il messaggio in console
+
 
 // FUNCTIONS
 // Funzione per creare minimo e massimo
