@@ -5,26 +5,31 @@
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 
-
-// Creare il contatore di numeri da 1 a 100
-const squareNumbers = minMaxNumber(1, 100);
-console.log(squareNumbers);
-
+// Collegare il bottone Play in modo compaia la griglia quando viene premuto
 const grid = document.querySelector(".grid");
-// Creare gli square da inserire nella griglia
+const playBtn = document.querySelector(".play-btn");
+playBtn.addEventListener("click", function() {
+    grid.classList.add("display");
+})
+
+// Creare gli square da inserire nella griglia in base alla difficoltà scelta dall'utente e creare il contatore di numeri
+let = squareNumbers = minMaxNumber(1, 100);
 for (let i = 0; i < 100; i++) {
     let squares = squareGenerator(squareNumbers[i]);
+    if (difficultyInput.value === "medium") {
+        squareNumbers = minMaxNumber(1, 81);
+    } else if (difficultyInput.value === "hard") {
+        squareNumbers = minMaxNumbers(1, 49);
+    } else {
+        squareNumbers;
+    }
     grid.append(squares);
+    // Aggiungere l'evento ad ogni cella per cui si colora di azzurro ed emette il messaggio in console
     squares.addEventListener("click", function() {
         squares.classList.toggle("light-blue");
         console.log(`${squareNumbers[i]}`);
     })
 }
-
-
-
-// Aggiungere l'evento ad ogni cella per cui si colora di azzurro ed emette il messaggio in console
-
 
 // FUNCTIONS
 // Funzione per creare minimo e massimo

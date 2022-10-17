@@ -9,10 +9,29 @@ img {
     max-width: 100%;
 }
 
-/* COMMON */
+/* HEADER */
+header {
+    height: 10vh;
+    width: 100%;
+    line-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container {
+    height: 100%;
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* MAIN */
 .ms-container {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     margin: 0 auto;
     background-color: aquamarine;
     display: flex;
@@ -23,8 +42,8 @@ img {
 .grid {
     width: 500px;
     height: 500px;
-    display: flex;
     flex-wrap: wrap;
+    display: none;
 }
 
 .square {
@@ -38,4 +57,8 @@ img {
 
 .light-blue {
     background-color: lightblue;
+}
+
+.display {
+    display: flex;
 }
