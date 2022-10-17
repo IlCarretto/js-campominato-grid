@@ -8,35 +8,39 @@
 // Collegare il bottone Play in modo compaia la griglia quando viene premuto
 const grid = document.querySelector(".grid");
 const playBtn = document.querySelector(".play-btn");
+
 playBtn.addEventListener("click", function() {
     grid.classList.add("display");
-})
 
-// Creare gli square da inserire nella griglia in base alla difficoltà scelta dall'utente e creare il contatore di numeri
-let = squareNumbers = minMaxNumber(1, 100);
-
-let difficultySquares = 100;
-let difficultyInput = document.getElementById("difficulties");
-
-for (let i = 0; i < difficultySquares; i++) {
-    let squares = squareGenerator(squareNumbers[i]);
-    grid.append(squares);
-    // Aggiungere l'evento ad ogni cella per cui si colora di azzurro ed emette il messaggio in console
-    squares.addEventListener("click", function() {
-        squares.classList.toggle("light-blue");
-        console.log(`${squareNumbers[i]}`);
+    let squareNumbers = minMaxNumber(1, 100);
+    let difficultySquares = 100;
+    let difficultyInput = document.getElementById("difficulties");
+    
+    for (let i = 0; i < difficultySquares; i++) {
+        let squares = squareGenerator(squareNumbers[i]);
+        grid.append(squares);
         if (difficultyInput.value === "medium") {
             squareNumbers = minMaxNumber(1, 81);
             difficultySquares = 81;
+            squares.classList.add("medium");
         } else if (difficultyInput.value === "hard") {
             squareNumbers = minMaxNumbers(1, 49);
             difficultySquares = 49;
+            squares.classList.add("hard");
         } else {
             squareNumbers;
             difficultySquares;
+            squares.classList.add("easy")
+
+            squares.addEventListener("click", function() {
+                squares.classList.toggle("light-blue");
+                console.log(`${squareNumbers[i]}`);
+            })
         }
-    })
-}
+    }
+})
+
+// Creare gli square da inserire nella griglia in base alla difficoltà scelta dall'utente e creare il contatore di numeri
 
 // FUNCTIONS
 // Funzione per creare minimo e massimo
