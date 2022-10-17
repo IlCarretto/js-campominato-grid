@@ -24,7 +24,7 @@ if (difficultyInput.value === "medium") {
     difficultySquares;
 }
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < difficultySquares; i++) {
     let squares = squareGenerator(squareNumbers[i]);
     if (difficultyInput.value === "medium") {
         squareNumbers = minMaxNumber(1, 81);
