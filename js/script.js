@@ -16,28 +16,25 @@ playBtn.addEventListener("click", function() {
 let = squareNumbers = minMaxNumber(1, 100);
 
 let difficultySquares = 100;
-if (difficultyInput.value === "medium") {
-    difficultySquares = 81;
-} else if (difficultyInput.value === "hard") {
-    difficultySquares = 49;
-} else {
-    difficultySquares;
-}
+let difficultyInput = document.getElementById("difficulties");
 
 for (let i = 0; i < difficultySquares; i++) {
     let squares = squareGenerator(squareNumbers[i]);
-    if (difficultyInput.value === "medium") {
-        squareNumbers = minMaxNumber(1, 81);
-    } else if (difficultyInput.value === "hard") {
-        squareNumbers = minMaxNumbers(1, 49);
-    } else {
-        squareNumbers;
-    }
     grid.append(squares);
     // Aggiungere l'evento ad ogni cella per cui si colora di azzurro ed emette il messaggio in console
     squares.addEventListener("click", function() {
         squares.classList.toggle("light-blue");
         console.log(`${squareNumbers[i]}`);
+        if (difficultyInput.value === "medium") {
+            squareNumbers = minMaxNumber(1, 81);
+            difficultySquares = 81;
+        } else if (difficultyInput.value === "hard") {
+            squareNumbers = minMaxNumbers(1, 49);
+            difficultySquares = 49;
+        } else {
+            squareNumbers;
+            difficultySquares;
+        }
     })
 }
 
