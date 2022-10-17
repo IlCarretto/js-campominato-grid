@@ -14,6 +14,16 @@ playBtn.addEventListener("click", function() {
 
 // Creare gli square da inserire nella griglia in base alla difficoltà scelta dall'utente e creare il contatore di numeri
 let = squareNumbers = minMaxNumber(1, 100);
+
+let difficultySquares = 100;
+if (difficultyInput.value === "medium") {
+    difficultySquares = 81;
+} else if (difficultyInput.value === "hard") {
+    difficultySquares = 49;
+} else {
+    difficultySquares;
+}
+
 for (let i = 0; i < 100; i++) {
     let squares = squareGenerator(squareNumbers[i]);
     if (difficultyInput.value === "medium") {
