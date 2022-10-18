@@ -24,7 +24,7 @@ playBtn.addEventListener("click", function() {
             difficultySquares = 81;
             squares.classList.add("medium");
         } else if (difficultyInput.value === "hard") {
-            squareNumbers = minMaxNumbers(1, 49);
+            squareNumbers = minMaxNumber(1, 49);
             difficultySquares = 49;
             squares.classList.add("hard");
         } else {
