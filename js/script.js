@@ -5,11 +5,12 @@
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 
-// Collegare il bottone Play in modo compaia la griglia quando viene premuto
+// Collegare il bottone Play in modo che compaia la griglia quando viene premuto
 const grid = document.querySelector(".grid");
 const playBtn = document.querySelector(".play-btn");
 
 playBtn.addEventListener("click", function() {
+    grid.innerHTML = "";
     grid.classList.add("display");
 
     let squareNumbers = minMaxNumber(1, 100);
