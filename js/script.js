@@ -16,6 +16,7 @@ playBtn.addEventListener("click", function() {
     let difficultySquares = 100;
     let difficultyInput = document.getElementById("difficulties");
     
+    // Creare gli square da inserire nella griglia in base alla difficoltà scelta dall'utente e creare il contatore di numeri
     for (let i = 0; i < difficultySquares; i++) {
         let squares = squareGenerator(squareNumbers[i]);
         grid.append(squares);
@@ -32,15 +33,14 @@ playBtn.addEventListener("click", function() {
             difficultySquares;
             squares.classList.add("easy")
 
-            squares.addEventListener("click", function() {
-                squares.classList.toggle("light-blue");
-                console.log(`${squareNumbers[i]}`);
-            })
+            // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emette un messaggio in console con il numero della cella cliccata.
         }
+        squares.addEventListener("click", function() {
+            squares.classList.toggle("light-blue");
+            console.log(`${squareNumbers[i]}`);
+        })
     }
 })
-
-// Creare gli square da inserire nella griglia in base alla difficoltà scelta dall'utente e creare il contatore di numeri
 
 // FUNCTIONS
 // Funzione per creare minimo e massimo
